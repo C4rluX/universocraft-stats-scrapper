@@ -45,10 +45,10 @@ fetch("https://stats.universocraft.com/stats.php?player=" + usernameArg)
 
 			return {
 				"username": splitBody[splitBody.indexOf("<h1>") + 1],
-				"ranks": ranks,
-				"userHead": userHead,
+				ranks,
+				userHead,
 				"userSkin": userHead.replace("https://api.mineskin.org/render/head?url=", ""),
-				"lastConnection": lastConnection,
+				lastConnection,
 			}
 		}
 
