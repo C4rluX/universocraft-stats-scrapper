@@ -74,10 +74,6 @@ const scrape = (body) => {
 
 	// Se crea el objeto final que contiene la información del usuario
 
-	require("fs").writeFileSync("./example.txt", splitBody.join("\n\n"), function (data, err) {
-
-	});
-
 	return {
 		"username": splitBody[splitBody.indexOf("<h1>") + 1],
 		ranks,
