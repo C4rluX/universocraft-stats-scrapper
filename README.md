@@ -2,7 +2,7 @@
 Este módulo tiene como finalidad scrappear los stats y la información de algún jugador de UniversoCraft.
 Funciona a base de webscrapping 'vanilla', módulo *node-fetch* necesario para fetchear información.
 
-# ¿Como usarlo?
+# ¿Cómo usarlo?
 Para usar el módulo primero debes requerirlo:
 ```
 const uniStatsScrapper = require("./scrape-universocraft-stats.js");
