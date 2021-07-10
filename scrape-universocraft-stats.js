@@ -77,7 +77,7 @@ const statsKeyNames = {
 	"lanas colocadas": "woolsPlaced",
 }
 
-const scrape = async (player = "", lang = "camelCase") => {
+const scrape = async (player = "", lang = "") => {
 
 	// Esto es para que sea 'opcional' incluir el módulo 'formatHTMLEntities.js' en tu proyecto
 	// En fín, esta función es para decodear las entidades HTML
