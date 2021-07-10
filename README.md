@@ -23,7 +23,7 @@ La función es asíncrona, por lo que debes usar promises o async/await para usa
 const uniStatsScrapper = require("./scrape-universocraft-stats.js");
 uniStatsScrapper("C4rluX2576")
     .then(stats => console.log(stats))
-		.catch(err => console.log(err))
+    .catch(err => console.log(err))
     
 // Resultado
 {
@@ -122,7 +122,7 @@ uniStatsScrapper("C4rluX2576")
 const uniStatsScrapper = require("./scrape-universocraft-stats.js");
 uniStatsScrapper("C4rluX2576", 'es')
     .then(stats => console.log(stats))
-		.catch(err => console.log(err))
+    .catch(err => console.log(err))
    
 // Resultado
 {
@@ -239,7 +239,7 @@ uniStatsScrapper("C4rluX2576", 'es')
 const uniStatsScrapper = require("./scrape-universocraft-stats.js");
 uniStatsScrapper("C4rluX2576", 'en')
     .then(stats => console.log(stats))
-		.catch(err => console.log(err))
+    .catch(err => console.log(err))
     
 // Resultado
 {
