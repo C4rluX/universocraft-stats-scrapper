@@ -169,11 +169,11 @@ const scrape = async (player = "", lang = "") => {
 		let gamemodeStats = {};
 
 		// Una variable que contendrá donde se encuentra el índice del gamemode en el HTML
-		const gamemodeIndex = splitBody.findIndex(g => g.includes(e));
+		const gamemodeIndex = statsBody.findIndex(g => g.includes(e));
 
 		// Una variable que contendrá el indice de la stat actual que esta siendo scrappeada del HTML
 		// Esta variable se irá actualizando para ir pasando a la siguiente stat mediante un while de más adelante
-		var gameStatIndex = splitBody.findIndex((h, i) => i > gamemodeIndex && h.includes('class="game-stat-title"'));
+		var gameStatIndex = statsBody.findIndex((h, i) => i > gamemodeIndex && h.includes('class="game-stat-title"'));
 
 		// While que irá scrappeando y guardando las stats en gamemodeStats, que irá aumentando la variable
 		// gameStatIndex de 16 en 16 para ir pasando a la siguiente stat scrappeada
@@ -184,11 +184,11 @@ const scrape = async (player = "", lang = "") => {
 			// en la función parseNumber() de antes para que en vez de ser un string, sea un número
 			// Dependiendo del lang
 			if (lang == 'es') { 
-				const statName = splitBody[gameStatIndex + 1].toLowerCase();
-				gamemodeStats[ statName[0].toUpperCase() + statName.slice(1) ] = parseNumber(splitBody[gameStatIndex + 5]);
+				const statName = statsBody[gameStatIndex + 1].toLowerCase();
+				gamemodeStats[ statName[0].toUpperCase() + statName.slice(1) ] = parseNumber(statsBody[gameStatIndex + 5]);
 			 }
-			else if (lang == 'en') {  gamemodeStats[ readableCamelCase( statsKeyNames[ splitBody[gameStatIndex + 1].toLowerCase() ] ) ] = parseNumber(splitBody[gameStatIndex + 5]); }
-			else { gamemodeStats[ statsKeyNames[ splitBody[gameStatIndex + 1].toLowerCase() ] ] = parseNumber(splitBody[gameStatIndex + 5]); }
+			else if (lang == 'en') {  gamemodeStats[ readableCamelCase( statsKeyNames[ statsBody[gameStatIndex + 1].toLowerCase() ] ) ] = parseNumber(statsBody[gameStatIndex + 5]); }
+			else { gamemodeStats[ statsKeyNames[ statsBody[gameStatIndex + 1].toLowerCase() ] ] = parseNumber(statsBody[gameStatIndex + 5]); }
 				
 			// Se le suma 16 a la variable gameStatIndex para pasar a la siguiente stat scrappeada
 			gameStatIndex += 16;
@@ -196,7 +196,7 @@ const scrape = async (player = "", lang = "") => {
 			// Si se llega hasta un cierto final donde el nombre de la stat empieze en '<' significa
 			// que se ha llegado al final de las estadísticas del minijuego actual, y prodece a rompar
 			// el While
-			if (splitBody[gameStatIndex + 1].startsWith("<")) break;
+			if (!statsBody[gameStatIndex + 1] || statsBody[gameStatIndex + 1].startsWith("<")) break;
 
 		}
 		
