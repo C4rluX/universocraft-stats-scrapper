@@ -21,7 +21,7 @@ La respueta o el objeto JSON retornado por la función tiene las siguientes prop
 - username: Nombre de usuario del jugador.
 - ranks: Rangos que posee el jugador en el servidor, puede ser alguno de estos: satur (Saturno), usuar (Usuario), jupit (Júpiter), mercu (Mercurio), premium (Premium, pero este no aparece a veces aún el jugador siendo Premium, por ejemplo cuando el jugador ya tiene otro rango que no sea Usuario), neptu (Neptuno), strea (Streamer), y yt1, yt2, yt3, yt4 (Todos estos pertenecen al rango YouTuber, el número de al lado del String no estoy 100% seguro que significa pero creo que hace referencia a la popularidad del YouTuber, mientras más alto más famoso es).
 - userHead: Este argumento contiene el enlace para obtener la 'cabeza' del jugador en 3D. Este argumento lo pongo porque en la página de las estadísticas de UniversoCraft usan esta API (mineskin.org) para mostrar la pequeña imagen de la cabeza del usuario.
-- ![Imagen1](https://github.com/C4rluX/universocraft-stats-scrapper/blob/main/readmeImages/image1.png?raw=true)
+![Imagen1](https://github.com/C4rluX/universocraft-stats-scrapper/blob/main/readmeImages/image1.png?raw=true)
 
 - userSkin: Este argumento contiene el enlace para obtener la skin del jugador.
 - lastConnection: Última vez que se conectó el jugador al servidor.
