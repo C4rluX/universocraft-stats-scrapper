@@ -78,6 +78,11 @@ const statsKeyNames = {
 }
 
 const scrape = async (player = "", lang = "") => {
+	
+	// Evitar errores al parsear los argumentos
+	if (!player) { throw "Invalid username" }
+	if (typeof player !== "string") { throw "Invalid player username, must be a string" }
+	if (typeof lang !== "string") { throw "Invalid lang argument, must be a string" }
 
 	// Esto es para que sea 'opcional' incluir el módulo 'formatHTMLEntities.js' en tu proyecto
 	// En fín, esta función es para decodear las entidades HTML
