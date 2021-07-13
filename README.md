@@ -3,6 +3,11 @@ Este módulo tiene como finalidad scrappear los stats y la información de algú
 Funciona a base de webscrapping 'vanilla', módulo *node-fetch* necesario para fetchear información.
 
 # ¿Cómo usarlo?
+Primero que todo, debes instalar 'node-fetch', módulo de npm que permite obtener la información:
+```
+npm install node-fetch
+```
+
 Para usar el módulo primero debes requerirlo:
 ```
 const uniStatsScrapper = require("./scrape-universocraft-stats.js");
