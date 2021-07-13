@@ -8,7 +8,7 @@ Primero que todo, debes instalar 'node-fetch', módulo de npm que permite obtene
 npm install node-fetch
 ```
 
-Para usar el módulo primero debes requerirlo:
+Para usar el scrapper primero debes requerirlo:
 ```
 const uniStatsScrapper = require("./scrape-universocraft-stats.js");
 ```
