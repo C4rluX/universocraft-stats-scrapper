@@ -78,7 +78,7 @@ const statsKeyNames = {
 }
 
 const scrape = async (player = "", lang = "") => {
-	
+
 	// Evitar errores al parsear los argumentos
 	if (!player) { throw "Invalid username" }
 	if (typeof player !== "string") { throw "Invalid player username, must be a string" }
@@ -127,7 +127,7 @@ const scrape = async (player = "", lang = "") => {
 	var pushString = "";
 	var splitBody = [];
 
-	body.split("").map(e => {
+	body.split("").forEach(e => {
 		if (e == "<") {
 			if (pushString.trim()) splitBody.push(pushString.trim());
 			pushString = e;
