@@ -355,3 +355,10 @@ uniStatsScrapper("C4rluX2576", 'en')
   }
 }
 ```
+
+### Errores:
+- "Invalid username": Cuando se envía un nombre de usuario vacío al módulo.
+- "Invalid player username, must be a string": Cuando se envía en el argumento del nombre del usuario, un tipo de dato que no es un String.
+- "Invalid lang argument, must be a string": Cuando se envía en el argumento del lenguaje de las keys, un tipo de dato que no es un String.
+- "The user doesn't exists": Cuando el usuario especificado nunca ha entrado en UniversoCraft.
+- Otro error: error ocurrido al obtener información de las estadísticas del usuario en UniversoCraft (de node-fetch) o durante el scrapping.
