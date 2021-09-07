@@ -176,6 +176,14 @@ const scrape = async (player = "", lang = "") => {
 		// Una variable que contendrá donde se encuentra el índice del gamemode en el HTML
 		const gamemodeIndex = statsBody.findIndex(g => g.includes(e));
 
+		// Verificar si la modalidad actual esta en mantenimiento
+		if (statsBody[gamemodeIndex + 7].startsWith("¡Se encuentra")) {
+			if (lang == 'es')  { stats[e] = "En mantenimiento"; }
+			else if (lang == 'en') { stats[ capitalizeAndFormatEnglishGamemode(readableCamelCase(gamemodesKeyNames[e])) ] = "In maintenance"; }
+			else { stats[ gamemodesKeyNames[e] ] = "maintenance"; }
+			return;
+		}
+
 		// Una variable que contendrá el indice de la stat actual que esta siendo scrappeada del HTML
 		// Esta variable se irá actualizando para ir pasando a la siguiente stat mediante un while de más adelante
 		var gameStatIndex = statsBody.findIndex((h, i) => i > gamemodeIndex && h.includes('class="game-stat-title"'));
@@ -184,14 +192,14 @@ const scrape = async (player = "", lang = "") => {
 		// gameStatIndex de 16 en 16 para ir pasando a la siguiente stat scrappeada
 		// Esto funciona debido al patrón que se sigue en la estructura del HTML de la página de las stats en UniversoCraft
 		while (true) {
-			
+
 			// Anexar en gamemodeStats el nombre de la stat y el valor que tiene, que en este caso se pasa
 			// en la función parseNumber() de antes para que en vez de ser un string, sea un número
 			// Dependiendo del lang
 			if (lang == 'es') { 
 				const statName = statsBody[gameStatIndex + 1].toLowerCase();
 				gamemodeStats[ statName[0].toUpperCase() + statName.slice(1) ] = parseNumber(statsBody[gameStatIndex + 5]);
-			 }
+			}
 			else if (lang == 'en') {  gamemodeStats[ readableCamelCase( statsKeyNames[ statsBody[gameStatIndex + 1].toLowerCase() ] ) ] = parseNumber(statsBody[gameStatIndex + 5]); }
 			else { gamemodeStats[ statsKeyNames[ statsBody[gameStatIndex + 1].toLowerCase() ] ] = parseNumber(statsBody[gameStatIndex + 5]); }
 				
