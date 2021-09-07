@@ -31,7 +31,7 @@ La respueta o el objeto JSON retornado por la función tiene las siguientes prop
 
 - userSkin: Este argumento contiene el enlace para obtener la skin del jugador.
 - lastConnection: Última vez que se conectó el jugador al servidor.
-- stats: Información de las estadísticas del usuario por modalidad.
+- stats: Información de las estadísticas del usuario por modalidad. Cada modalidad tiene su propia información, pero si cierta modalidad contiene el String "En mantenimiento" (es), "In maintenance" (en) o "maintenance" (camelCase), significa que está en mantenimiento, y que no se pueden acceder a las estadísticas.
 
 ### Ejemplos de uso:
 
